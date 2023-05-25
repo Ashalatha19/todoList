@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Todo List</title>
+        <link href="todo.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="todo">
+                <div class="navbar">
+                    <h2 class="heading"> To-Do List </h2>
+                    <!-- <img src ="image/todo.jpg " alt="todo image">  -->
+
+                    <div class="search">
+                        <input type="search" class="input-search" placeholder="Search">
+                        <button class="searchbtn"> <i class="fa fa-search"></i></button>
+                    </div>
+                    
+                </div>
+                <div class="input-row">
+                    <input type="text" class="inputBox" placeholder="Enter your task">
+                    <button class="addbtn" onClick="addTask()">Add</button>
+                </div>
+
+                <ol class="notCompleted">
+                    <h2 class="textsize">Not Completed</h2>
+                    
+                </ol>
+
+                <ol class="Completed">
+                    <h2 class="textsize">Completed</h2>
+                    
+                </ol>
+            </div>    
+        </div>
+        <script src="todo.js"></script>
+    </body>
+</html>
