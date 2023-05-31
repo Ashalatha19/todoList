@@ -6,9 +6,8 @@ function addTask() {
   if (inputval.value === "") {
     alert("You must write something");
   } else {
-    let li = document.createElement("li");
+    const li = document.createElement("li");
     li.innerHTML = inputval.value;
-    notcompleted.appendChild(li);
     inputval.value = "";
 
     const editBtn = document.createElement("button");
@@ -23,25 +22,44 @@ function addTask() {
     li.appendChild(checkBtn);
     li.appendChild(editBtn);
 
+    notcompleted.appendChild(li);
     //edit button
 
-    editBtn.addEventListener("click", () => {
-      const parent = this.parentNode;
-      parent.remove();
-      inputval.appendChild(parent);
-    });
+    // editBtn.addEventListener("click", function () {
+    //   console.log(this);
+    //   const parent = this.parent;
+    //   parent.remove();
+    //   inputval.appendChild(parent);
+    // });
 
     // check button
-    checkBtn.addEventListener("click", () => {
-      const parent = this.parentNode;
-      parent.remove();
-      completed.appendChild(parent);
+    // working solution 1
+    /* checkBtn.addEventListener("click", function () {
+      const parentNode = this.parentNode;
+      if (parentNode) {
+        const grantParent = parentNode.parentNode;
+        if (grantParent) {
+          grantParent.removeChild(parentNode);
+
+          completed.appendChild(parentNode);
+        }
+      }
     });
+    */
+
+    checkBtn.addEventListener("click", function () {
+      const parentNode = this.parentNode;
+      if (parentNode) {
+        notcompleted.removeChild(parentNode);
+        completed.appendChild(parentNode);
+      }
+    });
+
     // delete button
-    delBtn.addEventListener("click", () => {
-      const parent = this.parentNode;
-      parent.remove();
-    });
+    // delBtn.addEventListener("click", function () {
+    //   const parent = this.parent;
+    //   parent.remove();
+    // });
   }
 }
 
